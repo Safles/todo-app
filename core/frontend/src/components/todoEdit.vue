@@ -13,16 +13,23 @@
             <input type="text" name="task_desc" placeholder="Input Description" v-model="data.desc">
             <label for="task_deadline">Deadline:</label>
             <input type="date" class="date" v-model="data.deadline">
+            <label for="priority">Priority</label>
+            <select name="priority" id="prio" v-model="data.priority" @change="showValue()">
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+            </select>
             <button class="btn" style="margin-top: 10px;"><icon-park-solid-enter-key/></button>
         </form>
     </div>
 </template>
 <script>
 export default {
-    data(){
+    props : [
+        'id'
+    ], data(){
         return{
-            data:[],
-            id:this.$route.params.id,
+            data:[]
         }
     }, methods: {
         async putData(){
@@ -31,6 +38,7 @@ export default {
                 name:this.data.name,
                 desc:this.data.desc,
                 deadline:this.data.deadline,
+                priority:this.data.priority
             })
             .then(function(response){
                 console.log(response.data);
@@ -41,12 +49,13 @@ export default {
             })
         },
         async getData(){
+            console.log(this.id);   
             const response = await axios.get(`http://127.0.0.1:8000/api/edit_todo/${this.id}`)
             this.data = response.data;
         }
     }, mounted(){
         console.log(this.id);
         this.getData();
-    }
+    },
 }
 </script>

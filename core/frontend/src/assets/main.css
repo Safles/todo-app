@@ -12,7 +12,7 @@ body{
 }
 #main{
   height: 500px;
-  width: 400px;
+  width: 1000px;
   background: white;
   border-radius: 10px;
   border: 1px solid black;
@@ -23,47 +23,18 @@ body{
   font-size: 25px;
 }
 #card-container{
-  height: 400px;
-  width: 350px;
-  /* background-color: grey; */
-  border:1px solid black;
+  height: 450px;
+  width: 900px;
   margin:auto;
-  border-radius: 10px;
   overflow-y: auto;
   overflow-x: hidden;
-}
-#todo_card{
-  margin:5px;
-  padding: 5px;
-  max-height: 90px;
-  background-color: white;
-  border: 1px solid black;
-  border-radius: 10px;
-  overflow: hidden;
-  display: flex;
-}
-#todo_card .text{
-  text-align: left;
-  width: 360px;
-}
-#todo_card .text .task_name{
-  font-weight: bold;
-  font-size: 20px;
-}
-#todo_card .text .task_deadline{
-  margin-top: 10px;
-  color: red;
-  font-weight: bold;
-}
-#todo_card .modifier{
   display: flex;
   flex-direction: column;
-  width: 55px;
-  height: 90px;
-  justify-content: center;
-  align-items: center  ;
 }
-#todo_card .modifier_button{
+.modifier{
+  width: 100%;
+}
+.modifier_button{
   background: white;
   border-radius: 5px;
   border:1px solid black;
@@ -71,7 +42,7 @@ body{
   color: black;
   font-size: 25px;
 }
-#todo_card .modifier_button:hover{
+.modifier_button:hover{
   color: white;
   background: black;
   border-radius: 5px;
@@ -81,11 +52,10 @@ body{
 }
 #button{
   display:flex;
-  width: 400px;
+  width: 100%;
   height: 70px;
   align-items: center;
   justify-content: center;
-  /* background: red; */
 }
 .btn{
   width: 40px;
@@ -108,9 +78,8 @@ body{
 }
 #form_container{
   width: 100%;
-  height: 390px;
+  height: 300px;
   padding: 5px;
-  /* background-color: red; */
 }
 #form_container form{
   display: flex;
@@ -128,6 +97,92 @@ body{
   border: 1px solid black;
   padding-left: 5px;
 }
+#form_container select{
+  width: 80px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
 #form_container .date{
   width: 30%;
+}
+.table_container{
+  height: 390px;
+  margin-bottom: 15px;
+  border: 1px solid black;
+  border-radius: 10px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+table{
+  width: 100%;
+  padding: 5px;
+  border-collapse: collapse;
+  overflow-y:scroll;
+
+}
+thead{
+  font-weight: bold;
+  font-size: 20px;
+  border-bottom: 1px solid black;
+  height: 30px;
+  text-transform: uppercase;
+  color: white;
+  background: black;
+}
+tbody{
+  font-size: 15px;
+  width: 100%;
+}
+tbody tr{
+  border-bottom: 1px solid grey;
+  height: 20px;
+}
+.root{
+  position: relative;
+}
+.modal{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.5);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal > div{
+  background-color: #fff;
+  border: 1px solid black;
+  height: 350px;
+  width: 400px;
+  padding: 50px;
+  border-radius: 10px;
+}
+.modalButton{
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.priority{
+  color: black;
+  border-radius: 5px;
+  width: 80px;
+  height: 20px;
+  border: 1px solid black;
+}
+.prio_container{
+  display: flex;
+  width: 100%;
+  height: 46px;
+  justify-content: center;
+  align-items: center;
+}
+.checkbox{
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
 }
